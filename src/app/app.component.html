@@ -2,8 +2,11 @@
   <a class="nav-item m-1" href="#">log in</a>
   <a class="nav-item m-1" href="#">sign up</a>
 </nav>
+<app-messages></app-messages>
 <div>
-  <h1 class="text-center">{{ title }}</h1>
-  <img class="logo mb-5" src="assets/img/chefbot.svg" alt="chefbot">
+  <a class="text-dark" routerLink="/recipes">
+    <h1 class="text-center">{{ title }}</h1>
+    <img class="logo mb-5" src="assets/img/chefbot.svg" alt="chefbot">
+  </a>
 </div>
-<app-recipes></app-recipes>
+<router-outlet></router-outlet>
