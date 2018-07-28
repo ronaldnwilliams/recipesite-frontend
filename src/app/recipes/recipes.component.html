@@ -1,15 +1,28 @@
-<div class="row">
-  <div class="col align-self-center">
-    <div class="card mx-auto w-50 text-center" *ngFor="let recipe of recipes">
-      <div class="card-header">
-        <h5>
-          <button class="btn btn-sm btn-link border-0"><img class="favorite d-inline" src="assets/img/favorite.svg" alt="favorite"></button>  
-          <a class="text-dark" routerLink="/detail/{{recipe.id}}">{{recipe.name}}</a>
-        </h5>
-      </div>
-      <div class="card-body">
-        <a class="text-dark" routerLink="/detail/{{recipe.id}}"><div><img class="recipe-img img-thumbnail" src="assets/img/{{recipe.id}}.jpg" alt="{{recipe.name}}"></div>
-          <div>{{recipe.description}}</div></a>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card-header border mx-auto category-bg rounded">
+        <app-category-bar></app-category-bar>
+      </div>   
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-self-center">
+      <div class="card my-3 mx-auto text-center border-bottom rounded" *ngFor="let recipe of recipes">
+        <div class="card-header bg-white">
+          <h3>
+            <button class="btn btn-sm btn-link border-0"><img class="favorite d-inline" src="assets/img/favorite.svg" alt="favorite"></button>  
+            <a class="recipe-name" routerLink="/detail/{{recipe.id}}">{{recipe.name}}</a>
+          </h3>
+        </div>
+        <div class="card-body recipe-bg">
+          <a class="text-dark" routerLink="/detail/{{recipe.id}}">
+            <div class="border bg-white rounded-bottom">
+              <img class="recipe-img mb-3" src="assets/img/{{recipe.id}}.jpg" alt="{{recipe.name}}">           
+              {{recipe.description}}
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

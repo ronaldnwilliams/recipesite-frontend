@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
+import { CategoryBarComponent } from './category-bar/category-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipesComponent,
     RecipeDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    CategoryBarComponent
   ],
   imports: [
     BrowserModule,

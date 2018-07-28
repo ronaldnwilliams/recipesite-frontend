@@ -17,3 +17,28 @@
     height: 2em;
     max-width: 100%;
 }
+
+.recipe-bg {
+    background-color: #64b49b;
+}
+
+.recipe-name {
+    color: #1a1a93;
+    font-family: 'Lora', serif;
+}
+
+.card-body {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+}
+
+.category-bg {
+    background-color: #FDB768;
+    color: #FFFFFF;
+}
+
+.row {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}

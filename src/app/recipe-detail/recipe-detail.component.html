@@ -1,21 +1,23 @@
-<ul class="list-group">
-  <li class="list-group-item">{{recipe.name}}</li>
-  <li class="list-group-item">
-    Created by: <a href="#">{{recipe.creator.username}}</a>
-  </li>
-  <li class="list-group-item">Added: {{recipe.dateUploaded}}</li>
-  <li class="list-group-item"><img class="recipe-img" src="assets/img/{{recipe.id}}.jpg" alt="{{recipe.name}}"></li>  
-  <li class="list-group-item">{{recipe.description}}</li>
-  <li class="list-group-item">Prep time: {{recipe.prepTime}}</li>
-  <li class="list-group-item">Cook time: {{recipe.cookTime}}</li>
-  <ol class="list-group">
-    <h3 class="text-center">Ingredients</h3>
-    <li *ngFor="let ingredient of recipe.ingredients; index as i;" class="list-group-item">
-      <span class="border border-secondary rounded-bottom bg-dark text-white p-2">{{i + 1}}</span> {{ingredient.item}}
-    </li>    
-  </ol>
-  <ol class="list-group">
-      <h3 class="text-center text-info">Steps</h3>
-    <li *ngFor="let step of recipe.steps; index as i;" class="list-group-item"><span class="border border-secondary rounded-bottom bg-info text-white p-2">{{i + 1}}</span> {{step}}</li>    
-  </ol>
-</ul>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item"><h3 class="text-center">{{recipe.name}}</h3></li>
+    <li class="list-group-item">
+      <strong>Created by: </strong><a href="#">{{recipe.creator.username}}</a>
+    </li>
+    <li class="list-group-item"><strong>Added: </strong>{{recipe.dateUploaded}}</li>
+    <li class="list-group-item"><img class="recipe-img" src="assets/img/{{recipe.id}}.jpg" alt="{{recipe.name}}"></li>  
+    <li class="list-group-item text-center"><strong>{{recipe.description}}</strong></li>
+    <li class="list-group-item">Prep time: {{recipe.prepTime}}</li>
+    <li class="list-group-item">Cook time: {{recipe.cookTime}}</li>
+    <ol class="list-group">
+      <h3 class="text-center m-1 p-1">Ingredients</h3>
+      <li *ngFor="let ingredient of recipe.ingredients; index as i;" class="list-group-item">
+        <span class="border border-secondary rounded-bottom bg-dark text-white p-2">{{i + 1}}</span> {{ingredient.item}}
+      </li>    
+    </ol>
+    <ol class="list-group">
+        <h3 class="text-center text-info m-1 p-1">Steps</h3>
+      <li *ngFor="let step of recipe.steps; index as i;" class="list-group-item"><span class="border border-secondary rounded-bottom bg-info text-white p-2">{{i + 1}}</span> {{step}}</li>    
+    </ol>
+  </ul>
+</div>

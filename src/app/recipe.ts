@@ -6,7 +6,6 @@ export class Recipe {
     description: string;
     category: string;
     dateUploaded: Date;
-    dateUploaded2 = this.dateUploaded.getDay();
     prepTime: string;
     cookTime: string;
     steps: string[];

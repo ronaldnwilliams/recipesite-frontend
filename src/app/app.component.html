@@ -1,12 +1,14 @@
-<nav class="nav justify-content-end">
-  <a class="nav-item m-1" href="#">log in</a>
-  <a class="nav-item m-1" href="#">sign up</a>
-</nav>
-<app-messages></app-messages>
-<div>
-  <a class="text-dark" routerLink="/recipes">
-    <h1 class="text-center">{{ title }}</h1>
-    <img class="logo mb-5" src="assets/img/chefbot.svg" alt="chefbot">
-  </a>
+<div class="upper-bg mb-0">
+  <nav class="nav justify-content-end">
+      <a class="nav-item m-1 text-white" href="#">log in</a>
+      <a class="nav-item m-1 text-white" href="#">sign up</a>
+    </nav>
+    <app-messages></app-messages>
+    <div>
+      <a routerLink="/recipes">
+        <h1 class="text-center">{{ title }}</h1>
+        <img class="logo mb-5" src="assets/img/chefbot.svg" alt="chefbot">
+      </a>
+    </div>
 </div>
 <router-outlet></router-outlet>
