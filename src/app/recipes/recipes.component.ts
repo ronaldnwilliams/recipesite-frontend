@@ -8,8 +8,13 @@ import { Recipe } from '../recipe';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipes: Recipe[];
-  constructor(private recipeService: RecipeService) { }
+  allRecipes: Recipe[];
+  filteredRecipes: Recipe[];
+  categories = ['All', 'Breakfast', 'Lunch', 'Dinner', 'Dessert'];
+  selectedCategory: string;
+  constructor(private recipeService: RecipeService) { 
+    this.selectedCategory = this.categories[0];
+  }
 
   ngOnInit() {
     this.getRecipes();
@@ -17,7 +22,25 @@ export class RecipesComponent implements OnInit {
 
   getRecipes(): void {
     this.recipeService.getRecipes()
-      .subscribe(recipes => this.recipes = recipes);
+      .subscribe(recipes => {
+        this.allRecipes = recipes;
+        this.filteredRecipes = this.allRecipes;
+      });
+  }
+
+  categoryChange(category: string): void {    
+    this.selectedCategory = category;
+    if (category === 'All') {
+      this.filteredRecipes = this.allRecipes;
+    } else {
+      this.filteredRecipes = [];
+      for (let recipe of this.allRecipes) {
+        if (recipe.category.toLowerCase() === category.toLowerCase()) {
+          this.filteredRecipes.push(recipe);
+        }
+      }
+    }
+        
   }
 
 }

@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="card-header border mx-auto category-bg rounded">
-        <app-category-bar></app-category-bar>
+      <div class="card-header border mt-3 mx-auto category-bg rounded p-3">
+        <app-category-bar 
+          [categories]="categories"
+          (changed)="categoryChange($event)">
+        </app-category-bar>
       </div>   
     </div>
   </div>
   <div class="row">
     <div class="col align-self-center">
-      <div class="card my-3 mx-auto text-center border-bottom rounded" *ngFor="let recipe of recipes">
+      <div class="card my-3 mx-auto text-center border-bottom rounded" *ngFor="let recipe of filteredRecipes">
         <div class="card-header bg-white">
           <h3>
             <button class="btn btn-sm btn-link border-0"><img class="favorite d-inline" src="assets/img/favorite.svg" alt="favorite"></button>  

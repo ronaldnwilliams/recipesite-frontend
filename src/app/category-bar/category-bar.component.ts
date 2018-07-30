@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category-bar',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-bar.component.css']
 })
 export class CategoryBarComponent implements OnInit {
+  @Input() categories; 
+  @Output() changed = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onCategoryChange(category: string) {
+    this.changed.emit(category);
   }
 
 }
